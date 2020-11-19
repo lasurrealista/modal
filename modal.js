@@ -1,29 +1,21 @@
-let modal = document.getElementById('id__modal');
+let modal = document.querySelector('.modal');
 
-let buttonOpen = document.getElementById('id__openModal');
+let buttonOpen = document.querySelector('.modal__open');
 
-let buttonClose = document.getElementById('id__closeModal');
-
-/*
-buttonOpen.onclick = function() {
-    modal.style.display = "block";
-  }
-  
-buttonClose.onclick = function() {
-modal.style.display = "none";
-  }
-*/
+let buttonClose = document.querySelector('.modal__close');
 
 buttonOpen.addEventListener('click', () => {
-    modal.style.display = "block";
+  modal.classList.add('modal__visible');
 });
 
 buttonClose.addEventListener('click', () => {
-    modal.style.display = "none";
-});
+  modal.classList.remove('modal__visible');
+  });
 
 window.onclick = function(event) {
       if (event.target == modal) {
-    modal.style.display = "none";
+      modal.classList.remove('modal__visible'); 
     }
 }
+
+
